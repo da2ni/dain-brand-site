@@ -9,8 +9,9 @@
 // =============================================================================
 
 export const siteConfig = {
-  name: "My Project",
-  tagline: "Your tagline here",
-  description: "A modern landing page for your project, event, or campaign.",
-  url: "https://example.com",
+  name: "DAIN GAMES",
+  tagline: "Global mobile game studio",
+  description:
+    "캐주얼과 미드코어 장르를 중심으로 글로벌 시장을 겨냥한 모바일 게임을 만들고 운영하는 게임 스튜디오.",
+  url: "https://dain-brand-site.vercel.app",
 };

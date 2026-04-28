@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR } from "next/font/google";
+import { IBM_Plex_Sans_KR, Space_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { siteConfig } from "@/lib/data";
@@ -30,10 +30,17 @@ import "./globals.css";
  *  - Black Han Sans (display, headline-only)
  *  - Jua / Do Hyeon (playful, hand-drawn)
  * ───────────────────────────────────────────────────────────── */
-const fontSans = Noto_Sans_KR({
+const fontSans = IBM_Plex_Sans_KR({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const fontDisplay = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -46,7 +53,7 @@ const fontSans = Noto_Sans_KR({
  *  4. 네이버 서치어드바이저 → 사이트 등록 → HTML 태그에서 코드 복사
  *     → .env.local의 NAVER_SITE_VERIFICATION에 붙여넣기
  * ──────────────────────────────────────────────────── */
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.com'
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dain-brand-site.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -93,7 +100,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={fontSans.variable}>
+    <html lang="ko" className={`${fontSans.variable} ${fontDisplay.variable}`}>
       <body className="font-sans">
         {children}
         <Analytics />
